@@ -6,7 +6,6 @@ function runSimulation(road, n) {
   const cars = [];
   const lights = [];
 
-  // Inicializar coches y semáforos
   for (let i = 0; i < roadArray.length; i++) {
     if (roadArray[i] === 'C') {
       cars.push(new Car(i));
@@ -15,26 +14,21 @@ function runSimulation(road, n) {
     }
   }
 
-  const iterations = [road]; // Guardamos el estado inicial
+  const iterations = [road]; 
 
   for (let time = 1; time <= n; time++) {
-    // Actualizar semáforos
     lights.forEach(({ light }) => light.update());
 
-    // Mover coches (si es posible)
     cars.forEach((car) => {
       let nextPosition = car.position + 1;
       
-      // Comprobar si el coche está en una intersección
       const trafficLight = lights.find(({ position }) => position === nextPosition);
       
       if (!trafficLight || (trafficLight && trafficLight.light.isGreen())) {
-        // Si no hay semáforo o está verde, el coche se mueve
         car.move();
       }
     });
 
-    // Actualizar estado del camino
     const newRoad = Array(roadArray.length).fill('.');
     cars.forEach(car => {
       if (car.position < roadArray.length) {
