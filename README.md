@@ -11,7 +11,7 @@ Este proyecto simula el comportamiento de autos que se desplazan en una carreter
 1. **Clonar el repositorio:**
 
    ```bash
-   git clone <URL del repositorio>
+   git clone https://github.com/WalRoldan/traffic-light-simulation.git
    cd traffic-light-simulation
    ```
 
@@ -72,7 +72,19 @@ Con una simulación de 16 unidades de tiempo, la salida será:
   "CCC.G...R...", // 0 initial state
   ".CCCG...R...", // 1
   "..CCC...R...", // 2
-  // ...
+  "..CCGC..R...", // 3
+  "...CC.C.R...", // 4
+  "...COC.CG...", // 5
+  "...CR.C.C...", // 6
+  "...CR..CGC..", // 7
+  "...CR...C.C.", // 8
+  "...CR...GC.C", // 9
+  "...CR...O.C.", // 10
+  "....C...R..C", // 11
+  "....GC..R...", // 12
+  "....G.C.R...", // 13
+  "....G..CR...", // 14
+  "....G..CR...", // 15
   "....O...C..."  // 16
 ]
 ```
